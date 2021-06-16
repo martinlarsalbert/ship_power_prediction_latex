@@ -7,7 +7,7 @@ This means that the training set must happen in time prior to the test
 set. Fig.\ref{fig:train_test} shows how the train-test-split
 should been done for the present data, where the last 20\% of the data
 is used for testing.
-In Fig.\ref{fig:random_train_test} this train/test approach
+In Fig.\ref{fig:train_test_random} this train/test approach
 (time split) has been compared with the corresponding random train/test
 split (random split). A decision tree model has also been trained and
 tested to show that the random split overestimates the accuracy by far.
@@ -25,16 +25,10 @@ for parameter tuning as seen in Fig.\ref{fig:rolling_basis}.
 \label{fig:train_test}
 \end{figure}
 \begin{figure}[H]
-\begin{center}\includegraphics[width = 0.95\textwidth]{figures/random_figures/train_test.pdf}\end{center}
+\begin{center}\includegraphics[width = 0.95\textwidth]{figures/train_test_random.pdf}\end{center}
 \vspace{-0.7cm}
 \caption{Comparison of using random or rolling base test set with a decision tree model }
-\label{fig:random_train_test}
-\end{figure}
-\begin{figure}[H]
-\begin{center}\includegraphics[width = 0.95\textwidth]{figures/test_size_variation.pdf}\end{center}
-\vspace{-0.7cm}
-\caption{Accuracy with a decision tree model for varying test sizes, using random test or rolling base test}
-\label{fig:test_size_variation}
+\label{fig:train_test_random}
 \end{figure}
 \begin{figure}[H]
 \begin{center}\includegraphics[width = 0.95\textwidth]{figures/rolling_basis.pdf}\end{center}
