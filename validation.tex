@@ -1,183 +1,27 @@
 \section*{VALIDATION}\label{validation}
-\begin{verbatim}
-[<Experiment: artifact_location='file:///E:\\dev\\ship_power_prediction\\models\\mlruns/0', experiment_id='0', lifecycle_stage='active', name='Default', tags={}>,
-<Experiment: artifact_location='file:///E:\\dev\\ship_power_prediction\\models\\mlruns/1', experiment_id='1', lifecycle_stage='active', name='rolling_fit', tags={}>,
-<Experiment: artifact_location='file:///E:\\dev\\ship_power_prediction\\models\\mlruns/2', experiment_id='2', lifecycle_stage='active', name='random_fit', tags={}>]
-\end{verbatim}
-\begin{verbatim}
-data_path  \
-baff131093e8441b956049aef1e2f396  ../../data/processed/data_extended.csv
-9c8d937f405e4bc8bb0f92019634ce61  ../../data/processed/data_extended.csv
-268ebddcc63640f98a41051fe7b91f7a  ../../data/processed/data_extended.csv
-0fe11365a6fe47188b1acaa7e809d6f8  ../../data/processed/data_extended.csv
-c07cc28610374c62bfebc93cc4f6b4ac  ../../data/processed/data_extended.csv
-experiment                       input_path  \
-baff131093e8441b956049aef1e2f396  random_fit  pipeline/03.5_train_lasso.ipynb
-9c8d937f405e4bc8bb0f92019634ce61  random_fit  pipeline/03.5_train_lasso.ipynb
-268ebddcc63640f98a41051fe7b91f7a  random_fit  pipeline/03.5_train_lasso.ipynb
-0fe11365a6fe47188b1acaa7e809d6f8  random_fit  pipeline/03.5_train_lasso.ipynb
-c07cc28610374c62bfebc93cc4f6b4ac  random_fit  pipeline/03.5_train_lasso.ipynb
-mean_absolute_error  \
-baff131093e8441b956049aef1e2f396          1046.260920
-9c8d937f405e4bc8bb0f92019634ce61           819.729007
-268ebddcc63640f98a41051fe7b91f7a          1063.004566
-0fe11365a6fe47188b1acaa7e809d6f8          1114.798540
-c07cc28610374c62bfebc93cc4f6b4ac           999.131658
-model  \
-baff131093e8441b956049aef1e2f396  (StandardScaler(), PolynomialFeatures(degree=1...
-9c8d937f405e4bc8bb0f92019634ce61  (StandardScaler(), PolynomialFeatures(degree=1...
-268ebddcc63640f98a41051fe7b91f7a  (StandardScaler(), PolynomialFeatures(degree=1...
-0fe11365a6fe47188b1acaa7e809d6f8  (StandardScaler(), PolynomialFeatures(degree=1...
-c07cc28610374c62bfebc93cc4f6b4ac  (StandardScaler(), PolynomialFeatures(degree=1...
-model_name n_repeats n_splits  \
-baff131093e8441b956049aef1e2f396      lasso         1        6
-9c8d937f405e4bc8bb0f92019634ce61      lasso         1        6
-268ebddcc63640f98a41051fe7b91f7a      lasso         1        6
-0fe11365a6fe47188b1acaa7e809d6f8      lasso         1        6
-c07cc28610374c62bfebc93cc4f6b4ac      lasso         1        6
-output_path  r2_score  \
-baff131093e8441b956049aef1e2f396   artifacts\lasso_random_0.1.ipynb -8.422626
-9c8d937f405e4bc8bb0f92019634ce61   artifacts\lasso_random_0.3.ipynb  0.580757
-268ebddcc63640f98a41051fe7b91f7a  artifacts\lasso_rolling_0.3.ipynb  0.451840
-0fe11365a6fe47188b1acaa7e809d6f8   artifacts\lasso_random_0.2.ipynb  0.121825
-c07cc28610374c62bfebc93cc4f6b4ac  artifacts\lasso_rolling_0.2.ipynb  0.294661
-rolling rolling_cv rolling_test  \
-baff131093e8441b956049aef1e2f396    True      False         True
-9c8d937f405e4bc8bb0f92019634ce61    True      False         True
-268ebddcc63640f98a41051fe7b91f7a    True       True         True
-0fe11365a6fe47188b1acaa7e809d6f8    True      False         True
-c07cc28610374c62bfebc93cc4f6b4ac    True       True         True
-run_name              start_time  \
-baff131093e8441b956049aef1e2f396   lasso_random_0.1 2021-06-15 08:19:54.190
-9c8d937f405e4bc8bb0f92019634ce61   lasso_random_0.3 2021-06-14 21:56:06.740
-268ebddcc63640f98a41051fe7b91f7a  lasso_rolling_0.3 2021-06-14 21:55:37.903
-0fe11365a6fe47188b1acaa7e809d6f8   lasso_random_0.2 2021-06-14 21:55:12.659
-c07cc28610374c62bfebc93cc4f6b4ac  lasso_rolling_0.2 2021-06-14 21:54:41.701
-test_size
-baff131093e8441b956049aef1e2f396        0.1
-9c8d937f405e4bc8bb0f92019634ce61        0.3
-268ebddcc63640f98a41051fe7b91f7a        0.3
-0fe11365a6fe47188b1acaa7e809d6f8        0.2
-c07cc28610374c62bfebc93cc4f6b4ac        0.2
-\end{verbatim}
-\begin{verbatim}
-model_name n_repeats n_splits rolling_cv  \
-a52b044264ef4a7e94e63926dc7cf29e         SVR         1        6      False
-9ff97491a669473fbf1a41b9ec543da8     XGBoost         1        6      False
-baff131093e8441b956049aef1e2f396       lasso         1        6      False
-81d2fbbcbad94522bf7130391b070384  polynomial         1        6      False
-f5b8ebe0ffa740619229d9ffd7e76152       ridge         1        6      False
-ca25d047e7604e3fb8646b3988a39511         SVR         1        6       True
-e276ec46c1214ddcae3cd49e1db668c6     XGBoost         1        6       True
-132dde91cfcb40dd974ad6933cdba014       lasso         1        6       True
-7d0c316c3d394279aa734a55052529fd  polynomial         1        6       True
-d4434190fb4a41a5a5772172ca51d57c       ridge         1        6       True
-d68e24b3026e49fc9644561ae8af3b17         SVR         1        6      False
-b2cd34d38ac3485dadc06de8cbbe2728     XGBoost         1        6      False
-0fe11365a6fe47188b1acaa7e809d6f8       lasso         1        6      False
-3c29b481599c4abe8f7a95d2d33af4c1  polynomial         1        6      False
-46db6814d0014b65bb812d7da001c8b7       ridge         1        6      False
-c6530f6a1bf14e559032b277fae3aea8         SVR         1        6       True
-3b1d86f6b00e4e3c8a40bf2c927124b0     XGBoost         1        6       True
-c07cc28610374c62bfebc93cc4f6b4ac       lasso         1        6       True
-9a7ff8e6e1ac48e29c10fd107780806f  polynomial         1        6       True
-d95ee73756a946889ba0e024f0e46882       ridge         1        6       True
-3ebea5824c304d9397ab21de356fa9ae         SVR         1        6      False
-9eddf159dbae4ecb8d72a1c282b5db4c     XGBoost         1        6      False
-9c8d937f405e4bc8bb0f92019634ce61       lasso         1        6      False
-990398269bb447b2a97e566f3008d6d0  polynomial         1        6      False
-1b30f60b8312422fa26eed5c3f8fa90e       ridge         1        6      False
-60b8ba4ab06c418891a41cf11faa11b9         SVR         1        6       True
-f8aa4a26f1e047849c0285b4e5135c0c     XGBoost         1        6       True
-268ebddcc63640f98a41051fe7b91f7a       lasso         1        6       True
-22b68bdf9d004fb5a07b6b17db8743b2  polynomial         1        6       True
-e02ee4e1081d4bf9b1ce27e93b758d8c       ridge         1        6       True
-rolling_test  test_size  r2_score  \
-a52b044264ef4a7e94e63926dc7cf29e         True        0.1 -2.962466
-9ff97491a669473fbf1a41b9ec543da8         True        0.1  0.035101
-baff131093e8441b956049aef1e2f396         True        0.1 -8.422626
-81d2fbbcbad94522bf7130391b070384         True        0.1 -8.422626
-f5b8ebe0ffa740619229d9ffd7e76152         True        0.1 -8.429016
-ca25d047e7604e3fb8646b3988a39511         True        0.1 -2.962466
-e276ec46c1214ddcae3cd49e1db668c6         True        0.1  0.035101
-132dde91cfcb40dd974ad6933cdba014         True        0.1 -9.147163
-7d0c316c3d394279aa734a55052529fd         True        0.1 -9.147163
-d4434190fb4a41a5a5772172ca51d57c         True        0.1 -9.151453
-d68e24b3026e49fc9644561ae8af3b17         True        0.2  0.638748
-b2cd34d38ac3485dadc06de8cbbe2728         True        0.2  0.268085
-0fe11365a6fe47188b1acaa7e809d6f8         True        0.2  0.121825
-3c29b481599c4abe8f7a95d2d33af4c1         True        0.2  0.115734
-46db6814d0014b65bb812d7da001c8b7         True        0.2  0.115734
-c6530f6a1bf14e559032b277fae3aea8         True        0.2  0.638748
-3b1d86f6b00e4e3c8a40bf2c927124b0         True        0.2  0.268085
-c07cc28610374c62bfebc93cc4f6b4ac         True        0.2  0.294661
-9a7ff8e6e1ac48e29c10fd107780806f         True        0.2  0.298113
-d95ee73756a946889ba0e024f0e46882         True        0.2  0.297788
-3ebea5824c304d9397ab21de356fa9ae         True        0.3  0.827833
-9eddf159dbae4ecb8d72a1c282b5db4c         True        0.3  0.551107
-9c8d937f405e4bc8bb0f92019634ce61         True        0.3  0.580757
-990398269bb447b2a97e566f3008d6d0         True        0.3  0.580846
-1b30f60b8312422fa26eed5c3f8fa90e         True        0.3  0.581007
-60b8ba4ab06c418891a41cf11faa11b9         True        0.3  0.827833
-f8aa4a26f1e047849c0285b4e5135c0c         True        0.3  0.551107
-268ebddcc63640f98a41051fe7b91f7a         True        0.3  0.451840
-22b68bdf9d004fb5a07b6b17db8743b2         True        0.3  0.453828
-e02ee4e1081d4bf9b1ce27e93b758d8c         True        0.3  0.453796
-mean_absolute_error
-a52b044264ef4a7e94e63926dc7cf29e           648.678248
-9ff97491a669473fbf1a41b9ec543da8           301.473367
-baff131093e8441b956049aef1e2f396          1046.260920
-81d2fbbcbad94522bf7130391b070384          1046.260920
-f5b8ebe0ffa740619229d9ffd7e76152          1046.657750
-ca25d047e7604e3fb8646b3988a39511           648.678248
-e276ec46c1214ddcae3cd49e1db668c6           301.473367
-132dde91cfcb40dd974ad6933cdba014          1121.148434
-7d0c316c3d394279aa734a55052529fd          1121.148434
-d4434190fb4a41a5a5772172ca51d57c          1121.389415
-d68e24b3026e49fc9644561ae8af3b17           687.074822
-b2cd34d38ac3485dadc06de8cbbe2728           976.956381
-0fe11365a6fe47188b1acaa7e809d6f8          1114.798540
-3c29b481599c4abe8f7a95d2d33af4c1          1120.320194
-46db6814d0014b65bb812d7da001c8b7          1120.320194
-c6530f6a1bf14e559032b277fae3aea8           687.074822
-3b1d86f6b00e4e3c8a40bf2c927124b0           976.956381
-c07cc28610374c62bfebc93cc4f6b4ac           999.131658
-9a7ff8e6e1ac48e29c10fd107780806f           997.358999
-d95ee73756a946889ba0e024f0e46882           997.535980
-3ebea5824c304d9397ab21de356fa9ae           510.065790
-9eddf159dbae4ecb8d72a1c282b5db4c           856.025732
-9c8d937f405e4bc8bb0f92019634ce61           819.729007
-990398269bb447b2a97e566f3008d6d0           821.883944
-1b30f60b8312422fa26eed5c3f8fa90e           821.306761
-60b8ba4ab06c418891a41cf11faa11b9           510.065790
-f8aa4a26f1e047849c0285b4e5135c0c           856.025732
-268ebddcc63640f98a41051fe7b91f7a          1063.004566
-22b68bdf9d004fb5a07b6b17db8743b2          1060.505432
-e02ee4e1081d4bf9b1ce27e93b758d8c          1061.052082
-\end{verbatim}
+The accuracy of the fitted models have been estimated using two test
+data sets, containing 20\% and 30\% of the data. The results from this
+evaluation in seen in Tab.\ref{tab:test_validataion} and
+Fig.\href{fig_test_evaluation}{(below)}. The Support Vector Regressor
+seems to be the model that performs the best. However, none of the
+models seem to perform very well on this dataset and the accuracy
+changes very much with the test size, which means that the ranking
+between the models is very unreliable. So one might as well use the
+simple polynomial regression. The explicit formula from this regression
+is shown in Eq.\ref{eq:model_polynomial}. It can be seen from
+this expression that the $Power$ depends on the ship draught $T$ and
+one of the wind components $U_{wind}$. There is however also a very
+high interception term, which means that most of the $Power$ is not
+explained by this model, if we assume that $Power$ is zero when the
+ship is at rest in the harbour.
 \begin{figure}[H]
-\begin{center}\includegraphics[width = 0.95\textwidth]{figures/output_43_0.pdf}\end{center}
+\begin{center}\includegraphics[width = 0.95\textwidth]{figures/test_evaluation.pdf}\end{center}
 \vspace{-0.7cm}
-\caption{}
-\label{fig:}
+\caption{Evaluation of the fitted models accuracy}
+\label{fig:test_evaluation}
 \end{figure}
 \begin{figure}[H]
-\begin{center}\includegraphics[width = 0.95\textwidth]{figures/output_43_1.pdf}\end{center}
-\vspace{-0.7cm}
-\caption{}
-\label{fig:}
-\end{figure}
-\begin{figure}[H]
-\begin{center}\includegraphics[width = 0.95\textwidth]{figures/output_43_2.pdf}\end{center}
-\vspace{-0.7cm}
-\caption{}
-\label{fig:}
-\end{figure}
-\begin{verbatim}
-<matplotlib.legend.Legend at 0x1f9102c69d0>
-\end{verbatim}
-\begin{figure}[H]
-\begin{center}\includegraphics[width = 0.95\textwidth]{figures/output_44_1.pdf}\end{center}
+\begin{center}\includegraphics[width = 0.95\textwidth]{figures/output_42_0.pdf}\end{center}
 \vspace{-0.7cm}
 \caption{}
 \label{fig:}

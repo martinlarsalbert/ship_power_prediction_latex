@@ -1,2 +1,16 @@
 \section*{CONCLUSIONS}\label{conclusions}
+This dataset is a time series with high autocorrelation, so that the
+samples cannot be assumed as independent. This means that randomly
+splitting the data into a train and test dataset will overpredict the
+accuracy by far. With a time series, training should be done on historic
+data to predict the future. This means that the training set must happen
+in time prior to the test set, which has been done in this report for
+the test evaluation as well as in the cross validation for parameter
+tuning.
+The Support Vector Regressor seems to be the model that performs the
+best. However, none of the models seem to perform very well on this
+dataset and the accuracy changes very much with the test size, which
+means that the ranking between the models is very unreliable. The
+dataset should be further examined and extended with additional features
+to enable for a better model fit.
 % Add a bibliography block to the postdoc
