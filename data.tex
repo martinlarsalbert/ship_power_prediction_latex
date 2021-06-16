@@ -22,53 +22,6 @@ ship as seen in Fig.\ref{fig:dead_reckoning}. The positions are
 given in an unknown logintude and latitude scale, as the time step
 between measurements is unknown. The speed of the ship is also indicated
 as a color gradient in this figure.
-\begin{verbatim}
-Power          V  T_fwd  T_aft         HDG        Hs        Tz  \
-0  4096.859211  23.359333  10.25   10.2  225.120423  0.336355  4.113880
-1  4062.904838  23.351923  10.25   10.2  225.121609  0.334025  4.107303
-2  4105.640943  23.304333  10.25   10.2  213.803859  0.331768  4.100033
-3  4156.401020  23.293167  10.25   10.2  225.124531  0.328743  4.084423
-4  4147.498244  23.287000  10.25   10.2  225.125682  0.326883  4.072262
-D_wave    U_wind    V_wind
-0  58.287071 -0.251960  0.598855
-1  61.219389 -0.205543  0.537524
-2  64.378446 -0.167395  0.480271
-3  69.095584 -0.153352  0.410798
-4  73.970302 -0.125637  0.360612
-\end{verbatim}
-\begin{verbatim}
-Power            V        T_fwd        T_aft          HDG  \
-count  8631.000000  8631.000000  8631.000000  8631.000000  8631.000000
-mean   3188.935287    24.278879    11.182685    11.093998   254.571157
-std    1332.289539     1.001131     0.715500     0.701950    70.481649
-min    1000.000000    22.436267    10.250000    10.160000     0.000000
-25%    1815.723938    23.454343    10.700000    10.600000   245.028127
-50%    3173.939254    24.132437    11.000000    10.800000   270.018724
-75%    4385.159249    24.897164    11.700000    11.600000   292.405334
-max    5974.050320    27.955649    12.400000    12.200000   347.212496
-Hs           Tz       D_wave       U_wind       V_wind
-count  8631.000000  8631.000000  8631.000000  8631.000000  8631.000000
-mean      1.666358     7.462152   204.735041     2.035780     0.747150
-std       0.813212     1.955307    80.514470     4.931660     4.261370
-min       0.158431     2.233657     2.680181   -11.236499   -14.531855
-25%       1.153389     6.396379   169.396098    -0.985087    -2.065295
-50%       1.540236     7.497403   205.961881     2.740314     0.088762
-75%       2.160576     8.980331   268.427660     5.574664     3.568319
-max       4.330742    11.513423   358.097469    13.623467    12.415640
-\end{verbatim}
-\begin{verbatim}
-Power     float64
-V         float64
-T_fwd     float64
-T_aft     float64
-HDG       float64
-Hs        float64
-Tz        float64
-D_wave    float64
-U_wind    float64
-V_wind    float64
-dtype: object
-\end{verbatim}
 \begin{figure}[H]
 \begin{center}\includegraphics[width = 0.95\textwidth]{figures/power_autocorrelation.pdf}\end{center}
 \vspace{-0.7cm}
@@ -121,8 +74,8 @@ features have very low linear correlation with $Power$ as seen in
 Fig.\ref{fig:heat_map_extended_data}. They are however kept in
 the data, to let the regression model decide if they are useable or not.
 \begin{figure}[H]
-\begin{center}\includegraphics[width = 0.95\textwidth]{figures/output_25_0.pdf}\end{center}
+\begin{center}\includegraphics[width = 0.95\textwidth]{figures/heat_map_extended_data.pdf}\end{center}
 \vspace{-0.7cm}
-\caption{}
-\label{fig:}
+\caption{Heat map of data with additional features.}
+\label{fig:heat_map_extended_data}
 \end{figure}
